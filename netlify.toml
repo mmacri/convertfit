@@ -1,6 +1,6 @@
 [build]
-  publish = "recovery-site"
-  command = ""
+  publish = "/"
+  command = "echo 'Static HTML site - no build needed'"
 
 [images]
   remote_images = [
