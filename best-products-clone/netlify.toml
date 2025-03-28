@@ -1,0 +1,14 @@
+[images]
+  remote_images = [
+    "https://ext.same-assets.com/.*"
+  ]
+
+[build]
+  command = "npm run build"
+  publish = ".next/server/app"
+
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
