@@ -1,0 +1,9 @@
+[build]
+  publish = "/"
+  command = "echo 'Static HTML site - no build needed'"
+
+[images]
+  remote_images = [
+    "https://ext.same-assets.com/**",
+    "https://same-assets.com/**"
+  ]

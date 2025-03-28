@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog - Recovery Essentials</title>
+    <meta name="description" content="Expert advice on fitness recovery techniques, product reviews, and guides to help you recover faster and perform better.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header will be included here -->
+    <div id="header-placeholder"></div>
+
+    <!-- Blog Hero -->
+    <section class="py-16 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl font-bold mb-4">Recovery Essentials Blog</h1>
+                <p class="text-lg mb-8">Expert advice, product reviews, and guides to help you recover faster and perform better.</p>
+
+                <!-- Search Bar -->
+                <div class="mt-6 max-w-lg mx-auto relative">
+                    <input type="text" id="blog-search" class="w-full pl-12 pr-4 py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-300" placeholder="Search articles...">
+                    <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Navigation -->
+    <section class="border-b border-gray-200 bg-white sticky top-0 z-10 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex overflow-x-auto py-4 -mx-4 px-4 whitespace-nowrap">
+                <a href="#" class="category-filter active px-4 py-2 mx-2 rounded-md font-medium" data-category="all">All Categories</a>
+                <a href="#" class="category-filter px-4 py-2 mx-2 rounded-md font-medium" data-category="recovery-techniques">Recovery Techniques</a>
+                <a href="#" class="category-filter px-4 py-2 mx-2 rounded-md font-medium" data-category="massage-therapy">Massage Therapy</a>
+                <a href="#" class="category-filter px-4 py-2 mx-2 rounded-md font-medium" data-category="product-guides">Product Guides</a>
+                <a href="#" class="category-filter px-4 py-2 mx-2 rounded-md font-medium" data-category="fitness">Fitness</a>
+                <a href="#" class="category-filter px-4 py-2 mx-2 rounded-md font-medium" data-category="injury-prevention">Injury Prevention</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-8">Featured Article</h2>
+
+            <div id="featured-post" class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                <div class="lg:col-span-3">
+                    <a href="/blog/foam-rolling-guide.html" class="block overflow-hidden rounded-lg shadow-lg h-full">
+                        <img src="https://ext.same-assets.com/1001010124/foam-roller-guide.jpg" alt="The Ultimate Guide to Foam Rolling for Recovery" class="w-full h-80 object-cover">
+                    </a>
+                </div>
+                <div class="lg:col-span-2 flex flex-col">
+                    <div class="mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Recovery Techniques</span>
+                        <span class="text-gray-500 text-sm ml-2">Feb 20, 2023</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">
+                        <a href="/blog/foam-rolling-guide.html" class="text-gray-900 hover:text-indigo-600">The Ultimate Guide to Foam Rolling for Recovery</a>
+                    </h3>
+                    <p class="text-gray-600 mb-6">Learn how to effectively use foam rollers to enhance muscle recovery, improve mobility, and prevent injuries.</p>
+                    <a href="/blog/foam-rolling-guide.html" class="text-indigo-600 hover:text-indigo-800 font-medium mt-auto inline-flex items-center">
+                        Read More
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Posts -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl font-bold">Latest Articles</h2>
+                <div class="flex items-center">
+                    <span class="text-gray-600 mr-2">Sort by:</span>
+                    <select id="sort-select" class="border border-gray-300 rounded-md px-3 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                        <option value="newest">Newest</option>
+                        <option value="oldest">Oldest</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="blog-posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog posts will be dynamically loaded here -->
+                <div class="blog-post-card" data-category="active-vs-passive-recovery">
+                    <a href="/blog/active-vs-passive-recovery.html" class="block overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://ext.same-assets.com/1001010130/active-recovery.jpg" alt="Active vs. Passive Recovery: Which is Better?" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+                        </div>
+                        <div class="p-6 bg-white">
+                            <div class="mb-2 flex justify-between">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Recovery Techniques</span>
+                                <span class="text-gray-500 text-sm">Mar 15, 2023</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 hover:text-indigo-600 transition-colors">Active vs. Passive Recovery: Which is Better?</h3>
+                            <p class="text-gray-600 mb-4">Learn the differences between active and passive recovery techniques and when to use each to maximize your fitness results.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <div class="text-sm">
+                                        <p class="text-gray-900 font-medium">Sarah Johnson</p>
+                                    </div>
+                                </div>
+                                <a href="/blog/active-vs-passive-recovery.html" class="text-indigo-600 hover:text-indigo-800 font-medium inline-flex items-center">
+                                    Read More
+                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="blog-post-card" data-category="massage-gun-techniques">
+                    <a href="/blog/massage-gun-techniques.html" class="block overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://ext.same-assets.com/1001010126/massage-gun-techniques.jpg" alt="How to Choose the Right Massage Gun for Your Needs" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+                        </div>
+                        <div class="p-6 bg-white">
+                            <div class="mb-2 flex justify-between">
+                                <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">Product Guides</span>
+                                <span class="text-gray-500 text-sm">Jan 10, 2023</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 hover:text-indigo-600 transition-colors">How to Choose the Right Massage Gun for Your Needs</h3>
+                            <p class="text-gray-600 mb-4">Learn effective massage gun techniques to maximize recovery and relief from muscle soreness.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <div class="text-sm">
+                                        <p class="text-gray-900 font-medium">Jason Taylor</p>
+                                    </div>
+                                </div>
+                                <a href="/blog/massage-gun-techniques.html" class="text-indigo-600 hover:text-indigo-800 font-medium inline-flex items-center">
+                                    Read More
+                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="blog-post-card" data-category="recovery-frequency">
+                    <a href="/blog/recovery-frequency.html" class="block overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://ext.same-assets.com/1001010131/recovery-frequency.jpg" alt="How Often Should You Use Recovery Tools?" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+                        </div>
+                        <div class="p-6 bg-white">
+                            <div class="mb-2 flex justify-between">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Recovery Techniques</span>
+                                <span class="text-gray-500 text-sm">Jan 25, 2023</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 hover:text-indigo-600 transition-colors">How Often Should You Use Recovery Tools?</h3>
+                            <p class="text-gray-600 mb-4">Find the optimal frequency for using different recovery tools like massage guns, foam rollers, and compression gear.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <div class="text-sm">
+                                        <p class="text-gray-900 font-medium">Emma Rodriguez</p>
+                                    </div>
+                                </div>
+                                <a href="/blog/recovery-frequency.html" class="text-indigo-600 hover:text-indigo-800 font-medium inline-flex items-center">
+                                    Read More
+                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button id="load-more-btn" class="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    Load More Articles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-indigo-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
+                <p class="mb-8">Get the latest recovery tips, product reviews, and exclusive offers delivered to your inbox.</p>
+                <form class="flex flex-col sm:flex-row gap-2">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                    <button type="submit" class="px-6 py-3 bg-white text-indigo-600 font-medium rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+                        Subscribe
+                    </button>
+                </form>
+                <p class="mt-4 text-sm text-indigo-200">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer will be included here -->
+    <div id="footer-placeholder"></div>
+
+    <script src="/js/common.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Category filtering
+            const categoryFilters = document.querySelectorAll('.category-filter');
+            const blogPosts = document.querySelectorAll('.blog-post-card');
+
+            categoryFilters.forEach(filter => {
+                filter.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    // Remove active class from all filters
+                    categoryFilters.forEach(f => f.classList.remove('active', 'bg-indigo-600', 'text-white'));
+
+                    // Add active class to clicked filter
+                    this.classList.add('active', 'bg-indigo-600', 'text-white');
+
+                    const category = this.getAttribute('data-category');
+
+                    // Show all posts if 'all' category is selected
+                    if (category === 'all') {
+                        blogPosts.forEach(post => {
+                            post.style.display = 'block';
+                        });
+                        return;
+                    }
+
+                    // Otherwise, filter posts by category
+                    blogPosts.forEach(post => {
+                        if (post.getAttribute('data-category') === category) {
+                            post.style.display = 'block';
+                        } else {
+                            post.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Blog search functionality
+            const searchInput = document.getElementById('blog-search');
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase();
+
+                    if (searchTerm.length < 2) {
+                        // Show all posts if search term is too short
+                        blogPosts.forEach(post => {
+                            post.style.display = 'block';
+                        });
+                        return;
+                    }
+
+                    // Filter posts by search term
+                    blogPosts.forEach(post => {
+                        const title = post.querySelector('h3').textContent.toLowerCase();
+                        const excerpt = post.querySelector('p').textContent.toLowerCase();
+
+                        if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
+                            post.style.display = 'block';
+                        } else {
+                            post.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+            // Sorting functionality
+            const sortSelect = document.getElementById('sort-select');
+            const postsContainer = document.getElementById('blog-posts-container');
+
+            if (sortSelect && postsContainer) {
+                sortSelect.addEventListener('change', function() {
+                    const sortValue = this.value;
+                    const posts = Array.from(blogPosts);
+
+                    posts.sort((a, b) => {
+                        const dateA = new Date(a.querySelector('.text-gray-500').textContent);
+                        const dateB = new Date(b.querySelector('.text-gray-500').textContent);
+
+                        if (sortValue === 'newest') {
+                            return dateB - dateA;
+                        } else {
+                            return dateA - dateB;
+                        }
+                    });
+
+                    // Clear container
+                    postsContainer.innerHTML = '';
+
+                    // Append sorted posts
+                    posts.forEach(post => {
+                        postsContainer.appendChild(post);
+                    });
+                });
+            }
+
+            // Load more functionality (simple implementation for now)
+            const loadMoreBtn = document.getElementById('load-more-btn');
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', function() {
+                    // In a real implementation, this would load more posts from the server
+                    this.textContent = 'No More Articles';
+                    this.disabled = true;
+                    this.classList.add('bg-gray-400', 'cursor-not-allowed');
+                    this.classList.remove('bg-indigo-600', 'hover:bg-indigo-700');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
